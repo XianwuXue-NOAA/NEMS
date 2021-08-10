@@ -57,6 +57,14 @@ elif [[ -L /usrx && "$( readlink /usrx 2> /dev/null )" =~ dell ]] ; then
 	source /usrx/local/prod/lmod/lmod/init/$__ms_shell
     fi
     module purge
+elif [[ -d /apps/prod ]]; then
+
+    # We are on WCOSS2
+    #target=wcoss2
+    echo "Platform: WCOSS2"
+
+    module purge
+    module load envvar/1.0
 elif [[ -d /glade ]] ; then
     # We are on NCAR Cheyenne   
     if ( ! eval module help > /dev/null 2>&1 ) ; then
