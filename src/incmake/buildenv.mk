@@ -45,8 +45,7 @@ define ULIMIT_MODULE_LOGIC
   . $(CONFDIR)/module-setup.sh.inc ; \
   stack=`ulimit -S -s`                  ; \
   ulimit -S -s $(1)                     ; \
-  module use $(CONFDIR)                 ; \
-  module load modules.nems              ; \
+  . $(CONFDIR)/modules.nems             ; \
   module list                           ; \
   ulimit -S -s $$stack
 endef
