@@ -12,9 +12,9 @@
 include         $(ESMFMKFILE)
 ESMF_INC        = $(ESMF_F90COMPILEPATHS)
 ifdef ESMF_F90ESMFLINKPATHS
-    ESMF_LIB        = $(ESMF_F90ESMFLINKPATHS) $(ESMF_F90ESMFLINKRPATHS) -lesmf -cxxlib -lrt -ldl -lnetcdff -lnetcdf #$(ESMF_F90ESMFLINKLIBS)
+    ESMF_LIB        = $(ESMF_F90ESMFLINKPATHS) $(ESMF_F90ESMFLINKRPATHS) $(ESMF_F90ESMFLINKLIBS)
 else
-    ESMF_LIB        = -L$(ESMF_LIBSDIR) -lesmf -cxxlib -lrt -ldl -lnetcdff -lnetcdf # $(ESMF_F90ESMFLINKLIBS)
+    ESMF_LIB        = -L$(ESMF_LIBSDIR) $(ESMF_F90ESMFLINKLIBS)
 endif
 
 ################################################################################
